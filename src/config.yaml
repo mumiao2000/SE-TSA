@@ -1,0 +1,47 @@
+# general
+dataset: "TEST"
+input_len: 8
+output_len: 6
+split_ratio: "0.7, 0.1, 0.2"
+
+# data loading
+target_col: "OT"
+bert_model_name: "all-MiniLM-L6-v2"
+svd_n_components: 3
+
+# evolution control
+max_time: 360
+max_iterations: 10
+exploration_rate_base: 0.9
+exploration_rate_decay: 0.9
+exploration_rate_min: 0.1
+
+# MAP-Elites grid
+arch_families: "linear,attention,hybrid,advanced"
+preprocessing_types: "revin,hybrid,advanced"
+
+# model generation
+n_candidates: 5
+exploit_top_k: 3
+n_fix_retries: 2
+
+# training & evaluation
+batch_size: 32
+lr: 0.001
+train_max_epochs: 10
+train_patience: 3
+mape_threshold: 0.001
+
+# quick search
+quick_search_max_epochs: 3
+quick_search_patience: 1
+quick_search_max_time: 10
+quick_search_max_combinations: 8
+
+# ensemble (bagging) for final test
+ensemble_top_n_overall: 3
+ensemble_top_n_map_elites: 3
+
+# memory / reflection
+max_principles: 5
+principle_similarity_threshold: 0.7

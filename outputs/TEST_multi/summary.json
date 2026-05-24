@@ -1,0 +1,179 @@
+{
+    "best_model": {
+        "class_name": "KoopmanAutoencoder",
+        "val_loss": 0.6848703324794769,
+        "num_params": 4487882.0,
+        "arch_family": "advanced",
+        "preprocessing": "revin",
+        "best_config": {
+            "latent_dim": 32,
+            "encoder_depth": 3,
+            "koopman_regularization": 0.01,
+            "dropout": 0.3
+        },
+        "per_condition_configs": {
+            "8_6": {
+                "latent_dim": 32,
+                "encoder_depth": 3,
+                "koopman_regularization": 0.01,
+                "dropout": 0.3
+            },
+            "8_8": {
+                "latent_dim": 512,
+                "encoder_depth": 5,
+                "koopman_regularization": 0.0,
+                "dropout": 0.3
+            }
+        }
+    },
+    "top_10": [
+        {
+            "class_name": "KoopmanAutoencoder",
+            "val_loss": 0.6848703324794769,
+            "num_params": 4487882.0,
+            "arch_family": "advanced",
+            "preprocessing": "revin",
+            "iteration": 1
+        },
+        {
+            "class_name": "RevINLinear",
+            "val_loss": 0.803846001625061,
+            "num_params": 75.0,
+            "arch_family": "linear",
+            "preprocessing": "hybrid",
+            "iteration": 0
+        },
+        {
+            "class_name": "WaveletMLPMixer",
+            "val_loss": 0.8242270350456238,
+            "num_params": 19991573.0,
+            "arch_family": "hybrid",
+            "preprocessing": "revin",
+            "iteration": 1
+        },
+        {
+            "class_name": "NeuralCDEAttention",
+            "val_loss": 1.0425936579704285,
+            "num_params": 256562.0,
+            "arch_family": "attention",
+            "preprocessing": "revin",
+            "iteration": 1
+        },
+        {
+            "class_name": "StateSpaceGating_Fixed0",
+            "val_loss": 3.521560311317444,
+            "num_params": 17166817.0,
+            "arch_family": "advanced",
+            "preprocessing": "advanced",
+            "iteration": 1
+        }
+    ],
+    "principles": [
+        "Koopman-based architectures with moderate latent dimensions (32) and explicit regularization outperform high-dimensional unregularized variants and complex hybrid models, suggesting that enforced linear dynamics structure in latent space is more effective than increased capacity for time series forecasting."
+    ],
+    "per_condition_train_metrics": {
+        "8_6": {
+            "mse": 4.298442840576172,
+            "mae": 1.7056976556777954,
+            "mape": 1.852131962776184
+        },
+        "8_8": {
+            "mse": 5.161960124969482,
+            "mae": 1.8482757806777954,
+            "mape": 2.007551431655884
+        }
+    },
+    "per_condition_test_metrics": {
+        "8_6": {
+            "mse": 4.47977876663208,
+            "mae": 1.7180474996566772,
+            "mape": 1.8178375959396362
+        },
+        "8_8": {
+            "mse": 5.074069023132324,
+            "mae": 1.8503645658493042,
+            "mape": 1.9564472436904907
+        }
+    },
+    "mean_train_metrics": {
+        "mse": 4.730201482772827,
+        "mae": 1.7769867181777954,
+        "mape": 1.929841697216034
+    },
+    "mean_test_metrics": {
+        "mse": 4.776923894882202,
+        "mae": 1.7842060327529907,
+        "mape": 1.8871424198150635
+    },
+    "map_elites_coverage": 0.4166666666666667,
+    "total_iterations": 2,
+    "time_used_minutes": 11.773763835430145,
+    "ensemble_members": [
+        {
+            "member_idx": 0,
+            "class_name": "KoopmanAutoencoder",
+            "source": "overall",
+            "val_loss": 0.6848703324794769,
+            "n_conditions_ok": 2,
+            "n_conditions_total": 2,
+            "mean_test_mse": 4.612390995025635,
+            "mean_test_mae": 1.7559548020362854,
+            "mean_test_mape": 1.8582082353532314
+        },
+        {
+            "member_idx": 1,
+            "class_name": "RevINLinear",
+            "source": "overall",
+            "val_loss": 0.803846001625061,
+            "n_conditions_ok": 2,
+            "n_conditions_total": 2,
+            "mean_test_mse": 5.416632413864136,
+            "mean_test_mae": 1.8965017795562744,
+            "mean_test_mape": 2.0068871788680553
+        },
+        {
+            "member_idx": 2,
+            "class_name": "WaveletMLPMixer",
+            "source": "overall",
+            "val_loss": 0.8242270350456238,
+            "n_conditions_ok": 2,
+            "n_conditions_total": 2,
+            "mean_test_mse": 4.961298227310181,
+            "mean_test_mae": 1.8113776445388794,
+            "mean_test_mape": 1.9156615249812603
+        },
+        {
+            "member_idx": 3,
+            "class_name": "KoopmanAutoencoder",
+            "source": "map_elites",
+            "val_loss": 0.6848703324794769,
+            "n_conditions_ok": 2,
+            "n_conditions_total": 2,
+            "mean_test_mse": 4.728169679641724,
+            "mean_test_mae": 1.7775866985321045,
+            "mean_test_mape": 1.8805064260959625
+        },
+        {
+            "member_idx": 4,
+            "class_name": "RevINLinear",
+            "source": "map_elites",
+            "val_loss": 0.803846001625061,
+            "n_conditions_ok": 2,
+            "n_conditions_total": 2,
+            "mean_test_mse": 5.104066848754883,
+            "mean_test_mae": 1.8422001600265503,
+            "mean_test_mape": 1.9495491869747639
+        },
+        {
+            "member_idx": 5,
+            "class_name": "WaveletMLPMixer",
+            "source": "map_elites",
+            "val_loss": 0.8242270350456238,
+            "n_conditions_ok": 2,
+            "n_conditions_total": 2,
+            "mean_test_mse": 4.69851279258728,
+            "mean_test_mae": 1.763626515865326,
+            "mean_test_mape": 1.8656360916793346
+        }
+    ]
+}
