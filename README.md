@@ -67,10 +67,6 @@ SE-TSA is a large language model (LLM)-driven programmatic evolution framework t
 ### Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/mumiao2000/SE-TSA.git
-cd se-tsa
-
 # Create virtual environment and install dependencies
 uv venv --python 3.12
 source .venv/bin/activate
