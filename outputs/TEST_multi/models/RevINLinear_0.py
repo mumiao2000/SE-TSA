@@ -22,10 +22,10 @@ class RevINLinear(BaseForecastModel):
 
     def forward(self, x):
         # x: (batch, input_len, n_features)
-        x = self.revin(x, mode="norm")  # normalize
-        x = x.permute(0, 2, 1)  # (batch, n_features, input_len)
-        x = self.fc(x)  # (batch, n_features, output_len)
-        x = x.permute(0, 2, 1)  # (batch, output_len, n_feature)
-        x = self.revin(x, mode="denorm")  # denormalize back
+        x = self.revin(x, mode="norm")   # normalize
+        x = x.permute(0, 2, 1)           # (batch, n_features, input_len)
+        x = self.fc(x)                   # (batch, n_features, output_len)
+        x = x.permute(0, 2, 1)           # (batch, output_len, n_feature)
+        x = self.revin(x, mode="denorm") # denormalize back
         return x
 
